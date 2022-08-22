@@ -1,38 +1,38 @@
 import React from 'react';
 
 const initialState = 0;
-const initialState2 = 10;
+const initialState2 = 2;
 
-const reducer = (cState, action) => {
-    switch (action) {
+const reduce = (state, action) =>{
+    switch(action){
         case 'increment':
-            return cState + 1;
+            return state + 1;
         case 'decrement':
-            return cState - 1;
+            return state - 1;
         default:
-            return cState;
+            return state;
     }
 }
 
-const Counter = () => {
-    const [count, condition] = React.useReducer(reducer, initialState);
-    const [count2, condition2] = React.useReducer(reducer, initialState2);
+const CounterThree = () => {
+    const [count, dispatch] = React.useReducer(reduce, initialState);
+    const [count2, dispatch2] = React.useReducer(reduce, initialState2);
     return (
         <>
-            <div className='container'>
-                <h3>Count = {count}</h3>
-                <button type='button' onClick={() => condition('increment')}>Increment</button>
-                <button type='button' onClick={() => condition('decrement')}>Decrement</button>
+            <div className="container">
+                <h3>Counter-1 = {count}</h3>
+                <button type='button' onClick={() => dispatch('increment')}>Increment</button>
+                <button type='button' onClick={() => dispatch('decrement')}>Decrement</button>
             </div>
 
-            <div className='container2'>
-                <h3>Count2 = {count2}</h3>
-                <button type='button' onClick={() => condition2('increment')}>Increment</button>
-                <button type='button' onClick={() => condition2('decrement')}>Decrement</button>
+            {/* container - 2 */}
+            <div className="container2">
+                <h3>Counter-2 = {count2}</h3>
+                <button type='button' onClick={() => dispatch2('increment')}>Increment</button>
+                <button type='button' onClick={() => dispatch2('decrement')}>Decrement</button>
             </div>
         </>
-
     );
 }
 
-export default Counter;
+export default CounterThree;

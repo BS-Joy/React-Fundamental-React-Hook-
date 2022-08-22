@@ -1,13 +1,15 @@
 // import logo from './logo.svg';
 import './App.css';
 import React from 'react';
-import CounterThree from './components/useReducer/CounterThree';
+import ComponentLayout from './components/customHook/ComponentLayout';
+import ComponentLayout2 from './components/customHook/ComponentLayout2';
 
 
 function App() {
   return (
     <>
-      <CounterThree />
+      <ComponentLayout />
+      <ComponentLayout2 />
     </>
   );
 }
